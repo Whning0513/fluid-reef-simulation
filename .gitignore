@@ -5,6 +5,7 @@ reference-materials/
 engine/dualsphysics/bin/
 engine/dualsphysics/output/
 engine/dualsphysics/validation/
+engine/dualsphysics/case/geometry/
 *.log
 *.db
 *.db-journal
