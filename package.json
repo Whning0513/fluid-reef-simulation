@@ -1,0 +1,19 @@
+{
+  "name": "fluid-reef-simulation",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test && python -m unittest discover -s test -p \"test_*.py\"",
+    "generate:high": "python engine/dualsphysics/generate_case.py"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.5"
+  }
+}

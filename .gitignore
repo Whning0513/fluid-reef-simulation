@@ -1,0 +1,15 @@
+node_modules/
+dist/
+artifacts/*-profile/
+reference-materials/
+engine/dualsphysics/bin/
+engine/dualsphysics/output/
+engine/dualsphysics/validation/
+*.log
+*.db
+*.db-journal
+*.tmp
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store

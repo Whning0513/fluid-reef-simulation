@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071b26" />
+    <title>潮汐之膝 · 礁域流体实验</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene" aria-label="三维礁域流体模拟"></canvas>
+
+      <header class="title-block glass">
+        <div class="eyebrow"><span class="live-dot"></span> REAL-TIME SHALLOW WATER</div>
+        <h1>潮汐之膝</h1>
+        <p>弧礁、岸脊与水下环形动力源</p>
+      </header>
+
+      <aside class="panel glass" aria-label="模拟控制台">
+        <div class="panel-head">
+          <div>
+            <span class="kicker">SIMULATION 01</span>
+            <h2>动力源控制</h2>
+          </div>
+          <button id="pause" class="icon-button" type="button" aria-label="暂停模拟">Ⅱ</button>
+        </div>
+
+        <label class="control">
+          <span>活塞振幅 <output id="amplitudeValue">0.085</output></span>
+          <input id="amplitude" type="range" min="0.020" max="0.140" step="0.005" value="0.085" />
+        </label>
+        <label class="control">
+          <span>振动频率 <output id="frequencyValue">1.20 Hz</output></span>
+          <input id="frequency" type="range" min="0.45" max="2.20" step="0.05" value="1.20" />
+        </label>
+        <label class="control">
+          <span>时间倍率 <output id="speedValue">1.0×</output></span>
+          <input id="speed" type="range" min="0.2" max="1.8" step="0.1" value="1" />
+        </label>
+
+        <div class="readout">
+          <div><span>活塞深度</span><strong id="depthReadout">−0.22 m</strong></div>
+          <div><span>水面峰值</span><strong id="waveReadout">0.00 m</strong></div>
+        </div>
+
+        <div class="buttons">
+          <button class="view-button active" data-view="overview" type="button">总览</button>
+          <button class="view-button" data-view="surface" type="button">贴水</button>
+          <button class="view-button" data-view="source" type="button">动力源</button>
+        </div>
+        <button id="reset" class="reset-button" type="button">重置波场</button>
+      </aside>
+
+      <section class="heatmap glass" aria-label="实时水深热力图">
+        <div class="heatmap-head">
+          <div>
+            <span class="kicker">LIVE DEPTH FIELD</span>
+            <h2>水深热力图</h2>
+          </div>
+          <span class="heatmap-unit">m</span>
+        </div>
+        <canvas id="heatmap" width="520" height="360" aria-label="以水深为色轴的俯视图"></canvas>
+        <div class="heatmap-note"><i></i>留空区域：礁石与动力源</div>
+      </section>
+
+      <section class="legend glass" aria-label="场景图例">
+        <div><i class="swatch reef"></i><span>弧形膝状礁</span></div>
+        <div><i class="swatch ridge"></i><span>渐高岸脊</span></div>
+        <div><i class="swatch source"></i><span>环形活塞源</span></div>
+      </section>
+
+      <div class="coordinates">世界域 <b>[−1, 1]³</b> · 水面 <b>z = 0</b></div>
+      <div class="hint">拖拽旋转 · 滚轮缩放 · 右键平移</div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

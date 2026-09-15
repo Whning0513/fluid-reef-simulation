@@ -1,0 +1,23 @@
+{
+  "engine": "DualSPHysics 5.4.3",
+  "particle_spacing_m": 0.02,
+  "approximate_fluid_particles_before_solids": 500000,
+  "duration_s": 8.0,
+  "output_interval_s": 0.025,
+  "actuator": {
+    "outer_radius_m": 0.1,
+    "inner_radius_m": 0.06,
+    "height_m": 0.1,
+    "rest_z_m": -0.22,
+    "amplitude_m": 0.085,
+    "frequency_hz": 1.2,
+    "highest_top_z_m": -0.085
+  },
+  "triangle_counts": {
+    "leg_reef_west.stl": 2040,
+    "leg_reef_east.stl": 2040,
+    "rear_reef.stl": 3962,
+    "annular_actuator.stl": 576
+  },
+  "actuator_boundary_samples": 600
+}
